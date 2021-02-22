@@ -52,7 +52,11 @@ var employees = [
 
 //Code Here
 
-
+const employeeUpdater = () => {
+  employees = employees.filter(el=>el.firstName==="Theo"?false:true); 
+  employees.forEach(el=>el.firstName==="Lorie"?el.department='HR':null);
+  return employees
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -70,6 +74,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 //Code Here
 
+function removeDuplicates() {
+  for (let i=0; i<workplaceAccidents.length; i++) {
+    for (a=0;a<workplaceAccidents.length; a++) {
+      if (a!==i) {
+        workplaceAccidents[i]===workplaceAccidents[a] ? workplaceAccidents.splice(a,1): null;
+      };
+    }
+  }
+  return workplaceAccidents;
+}
 
 
 ////////// PROBLEM 3 //////////
