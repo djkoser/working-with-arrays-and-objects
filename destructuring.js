@@ -23,6 +23,7 @@ var carDetails = {
 
 //Code Here
 
+let {color,make,model,year} = carDetails;
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +34,7 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+function greeting( {firstName,lastName,title} ) {
   //Code Here
   
   // Do not edit the code below.
@@ -55,6 +56,7 @@ function greeting( obj ) {
 
 //Code Here
 
+const totalPopulation = ({utah,california,texas,arizona}) => utah+california+texas+arizona
 
 
 ////////// PROBLEM 4 //////////
@@ -69,6 +71,7 @@ function greeting( obj ) {
 
 //Code Here
 
+const ingredients = ({carb,fat,protein}) => [carb,fat,protein]
 
 
 ////////// PROBLEM 5 //////////
@@ -87,7 +90,10 @@ function greeting( obj ) {
 
 //Code Here
 
-
+const largeNumbers = ({first,second,third}) => {
+  let array=[first,second,third]; 
+  return array.reduce((lowest,currentElement) => currentElement<=lowest ?lowest = currentElement:lowest)
+} 
 
 ////////// PROBLEM 6 //////////
 
@@ -99,4 +105,4 @@ function greeting( obj ) {
 
 //Code Here
 
-
+const numberGroups = ({a,b,c}) => a > b && a>c ? a :b >a&&b>c?b:c>a && c>b?c:null
