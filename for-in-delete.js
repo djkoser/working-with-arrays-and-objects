@@ -11,13 +11,13 @@
   In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
 */
 
-// var values = {
-//   one: 'These',
-//   two: ' are',
-//   three: ' the',
-//   four: ' property',
-//   five: ' values.'
-// } 
+var values = {
+  one: 'These',
+  two: ' are',
+  three: ' the',
+  four: ' property',
+  five: ' values.'
+} 
 
 // for(var key in values) {
 //   console.log(values[key])
@@ -40,7 +40,11 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  let string = "";
+  for (i in obj) {
+    string +=obj[i]
+  }
+  return string;
 }
 
 
@@ -55,7 +59,12 @@ function showValues( obj ) {
 
 //Code Here
 
-
+function greaterThan10(obj) {
+  for (i in obj) {
+    obj[i]>10?obj[i]=0:null;
+  }
+  return obj
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -67,7 +76,12 @@ function showValues( obj ) {
 
 //Code Here
 
-
+const double = (obj) => {
+  for (i in obj) {
+    obj[i] *= 2;
+  };
+  return obj
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -80,6 +94,14 @@ function showValues( obj ) {
 */
 
 //Code Here
+
+const secrets = (obj) => {
+  let string = "";
+  for (let i in obj) {
+    i.match(/sh/ig)? string = string+obj[i]:null
+  }
+  return string;
+}
 
 
 
@@ -112,7 +134,10 @@ function showValues( obj ) {
 
 //Code Here
 
-
+const removePassword = (obj) => {
+  delete obj.password;
+  return obj
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -131,7 +156,9 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
-
+for (i in deleteTheBigNumbers) {
+  deleteTheBigNumbers[i]>100?delete deleteTheBigNumbers[i]:null
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -144,7 +171,12 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
-
+const startsWithK = (object) => {
+  for (i in object) {
+    i.match(/^k/i) ? delete object[i] : null
+  };
+  return object;
+};
 
 ////////// PROBLEM 8 //////////
 
@@ -157,6 +189,9 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
-
-
+const hiddenTreasure = (o) => {
+  for (i in o) {
+    o[i].toLowerCase().includes('treasure') ? null : delete o[i];
+  }
+  return o
+}
